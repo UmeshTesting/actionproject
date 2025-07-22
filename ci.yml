@@ -60,7 +60,7 @@ jobs:
       - name: Build and Push docker image
         uses: docker/build-push-action@v6
         with:
-          context: ci.yml # <----- Assumes your Dockerfile is in the root of the repository
+          #context: # <----- Assumes your Dockerfile is in the root of the repository
           push: true # This enables pushing the image
           tags: 12766/umeshmanral # Specify image name and tag(s)
           # No 'registry:' parameter needed here, it's handled by the login action
