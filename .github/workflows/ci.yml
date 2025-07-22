@@ -32,7 +32,6 @@ jobs:
         java-version: '1.8'
     - name: Build with Maven
       run: mvn -B package --file pom.xml
-
       - name: Build and Push docker image
        uses: docker/build-push-action@v6
          with:
