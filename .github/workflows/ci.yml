@@ -63,6 +63,6 @@ jobs:
           context: . # <----- Assumes your Dockerfile is in the root of the repository
           push: true # This enables pushing the image
           tags: 12766/umeshmanral # Specify image name and tag(s)
-          # No 'registry:' parameter needed here, it's handled by the login action
+          # No 'registry:' parameter needed here, it's handled by the login action .
 
 
