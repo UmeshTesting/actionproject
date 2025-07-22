@@ -14,6 +14,11 @@ on:
   pull_request:
     branches: [ "master" ]
 
+    #permission blocks
+    permissions:
+      contents: read #allow reading your repository content
+      security-events: write #allow submitting dependency graph information
+
 jobs:
   build:
 
