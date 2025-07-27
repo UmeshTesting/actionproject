@@ -11,6 +11,12 @@
 name: Java CI with Maven
 
 on:
+  workflow dispatch:
+  inputs:
+    test-groups:
+      description: 'the testNG group to run sanity, regression, etc'
+      required: true
+      default: 'sanity'
   push:
     branches: [ "master" ]
   pull_request:
@@ -35,8 +41,9 @@ jobs:
           distribution: 'temurin' # Recommended distribution for better stability
           cache: maven # Enable Maven caching for faster builds
 
-      - name: Build with Maven
-        run: mvn -B package --file pom.xml
+      - name: Run Maven with specified group
+        #run: mvn -B package --file pom.xml
+        run: mvn clean test -Dgroups=${{github.event.inputs.test-groups}}
 
       # Corrected indentation for the next step
       #- name: Update dependency graph
