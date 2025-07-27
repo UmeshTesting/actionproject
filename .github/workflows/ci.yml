@@ -12,17 +12,16 @@ name: Java CI with Maven
 
 on:
   workflow_dispatch:
-
-  push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
-
     inputs:
       test-groups:
         description: 'the testNG group to run sanity, regression, etc'
         required: true
         default: 'sanity'
+
+  #push:
+   # branches: [ "master" ]
+  #pull_request:
+   # branches: [ "master" ]
 
 # Correct placement for permissions block (workflow level)
 permissions:
